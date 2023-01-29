@@ -7,5 +7,5 @@ Nome|Linguagem|Descrição
  |  | 
 
 ## Redes Sociais
-* [Linkedln](https://br.linkedin.com/in/guilherme-ferreira-004449252)
+* [Linkedln](https://linkedin.com/in/guilherme-ferreira-004449252)
 * [Instagram](https://br.linkedin.com/in/guilherme-ferreira-004449252)
