@@ -2,10 +2,11 @@
 Cursando Sistemas da Informação - Universidade Mogi das Cruzes
 
 ## Cursos
-Nome|Linguagem|Descrição
+Nome|Descrição
 ---|---|---
-Curso Em video |HTML5-CSS3|
-Web Design|HTML5-CSS3|Udemy
+Curso Em video |HTML5-CSS3
+Web Design com HTML5-CSS3|Udemy
+JavaScript e TypeScript|Udemy
 
 
 ## Redes Sociais
