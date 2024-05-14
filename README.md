@@ -7,7 +7,7 @@
 ### Guilherme Ferreira Silva 👋
 Cursando Sistemas da Informação - Universidade Mogi das Cruzes 
 
-- 🌱 Estudando NodeJs, Express, SQL
+- 🌱 Estudando nextJs
 - 👯 Foco em se tornar Full Stack
 - 🤔 Gaming...
 - 💬 Music...
