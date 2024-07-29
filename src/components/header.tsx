@@ -1,18 +1,6 @@
 import Link from "next/link";
 import { NavLink } from "./nav-link";
-
-const links = [
-  {
-    id: '0',
-    title: 'Home',
-    href: '/'
-  },
-  {
-    id: '1',
-    title: 'Projetos',
-    href: '/projects'
-  }
-];
+import { links } from "@/lib/mock";
 
 export function Header() {
   return (
