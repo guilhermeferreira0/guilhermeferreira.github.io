@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, IBM_Plex_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
+import { ContactForm } from "@/components/contact-form";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${plexMono.variable} ${jetBrains.variable}`}>
         <Header />
         {children}
+        <ContactForm />
         </body>
     </html>
   );
