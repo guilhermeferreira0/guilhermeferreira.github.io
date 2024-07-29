@@ -1,4 +1,4 @@
-import { TbBrandGithub, TbBrandLinkedin } from "react-icons/tb";
+import { TbBrandGithub, TbBrandLinkedin, TbBrandMysql, TbBrandNextjs, TbBrandReact } from "react-icons/tb";
 
 export const links = [
   {
@@ -25,5 +25,23 @@ export const contacts = [
     title: 'Linkedin',
     href: '',
     icon: <TbBrandLinkedin />
+  },
+]
+
+export const knownTechs = [
+  {
+    icon: <TbBrandNextjs />,
+    name: 'Next.js',
+    description: 'lorem ipsum dolor anet asjo joutin'
+  },
+  {
+    icon: <TbBrandReact />,
+    name: 'React.js',
+    description: 'lorem ipsum dolor anet asjo joutin'
+  },
+  {
+    icon: <TbBrandMysql />,
+    name: 'MySQL',
+    description: 'lorem ipsum dolor anet asjo joutin'
   },
 ]
