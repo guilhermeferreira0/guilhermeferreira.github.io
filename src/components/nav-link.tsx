@@ -20,7 +20,7 @@ export function NavLink(item: NavItemProps) {
 
 
   return (
-    <li key={item.id} className="text-gray-400 flex items-center gap-2 font-medium font-mono">
+    <li key={item.id} className="text-gray-400 flex items-center gap-2 font-medium font-jetbrains tracking-wider">
       <span className="text-emerald-400">#</span>
       <Link href={item.href} className={ClassMerge(
         isActive && 'text-gray-100'

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, IBM_Plex_Mono, JetBrains_Mono } from "next/font/google";
+import { Inter, IBM_Plex_Mono, JetBrains_Mono, Saira } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { ContactForm } from "@/components/contact-form";
+import { BackTop } from "@/components/back-top";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,6 +21,11 @@ const jetBrains = JetBrains_Mono({
   variable: '--font-jetbrains'
 });
 
+const saira = Saira({
+  subsets: ["latin"],
+  variable: '--font-saira'
+});
+
 export const metadata: Metadata = {
   title: "FerreiraCodes",
   description: "Welcome to my portofolio page",
@@ -32,10 +38,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.variable} ${plexMono.variable} ${jetBrains.variable}`}>
+      <body
+        className={`${inter.variable} ${plexMono.variable} ${jetBrains.variable} ${saira.variable}`}
+      >
         <Header />
         {children}
         <ContactForm />
+        <BackTop />
         </body>
     </html>
   );

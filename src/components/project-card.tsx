@@ -37,7 +37,7 @@ export function ProjectCard(props: ProjectCardProps) {
           ))}
         </div>
         <Link
-          className="text-gray-300 text-sm hover:text-emerald-500 transition-colors flex items-center justify-center gap-2"
+          className="text-gray-300 text-sm hover:text-emerald-500 transition-colors flex items-center justify-center gap-2 font-saira"
           href={props.href}
         >
           Ver Projeto
