@@ -11,7 +11,7 @@ export function Knowledges() {
         {knownTechs.map((tech, index) => (
           <KnownTech
             key={index}
-            tech={{...tech}}
+            {...tech}
           />
         ))}
       </div>
