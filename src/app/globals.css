@@ -8,8 +8,8 @@
   }
 }
 
-.container {
-  @apply mx-auto w-full max-w-[1200px] px-6
+.default-px {
+  @apply px-11 lg:px-52
 }
 
 *::-webkit-scrollbar {
