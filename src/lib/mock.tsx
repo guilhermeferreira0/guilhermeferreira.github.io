@@ -45,3 +45,14 @@ export const knownTechs = [
     description: 'lorem ipsum dolor anet asjo joutin'
   },
 ]
+
+export const images = [
+  {
+    title: 'Login',
+    image: 'https://mobimg.b-cdn.net/v3/fetch/0a/0aa23e8f434059cfe6deed3bc40b35dc.jpeg?h=1400',
+  },
+  {
+    title: 'Home',
+    image: 'https://mobimg.b-cdn.net/v3/fetch/0a/0aa23e8f434059cfe6deed3bc40b35dc.jpeg?h=1400',
+  }
+]
