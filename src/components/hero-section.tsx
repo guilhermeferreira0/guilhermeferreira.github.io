@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 import { TechBadge } from "./tech-badge";
 import { Button } from "./button";
@@ -6,6 +7,11 @@ import { contacts } from "@/lib/mock";
 import Link from "next/link";
 
 export function HeroSection() {
+  const handleContact = () => {
+    const contactSession = document.querySelector('#contact');
+    contactSession?.scrollIntoView({ behavior: 'smooth' });
+  }
+
   return (
     <section className="default-px w-full lg:h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-end">
       <div className="flex items-start justify-between flex-col-reverse lg:flex-row">
@@ -27,7 +33,7 @@ export function HeroSection() {
           </div>
 
           <div className="flex-col sm:items-center sm:gap-5 sm:flex-row mt-6 lg:mt-10">
-            <Button className="shadow-button">
+            <Button className="shadow-button" onClick={handleContact}>
               Entre em Contato
               <FaArrowRight size={15}/>
             </Button>
