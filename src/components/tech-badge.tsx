@@ -8,7 +8,7 @@ export function TechBadge({children}: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <span className="text-emerald-300 bg-emerald-900/80 text-sm py-1 px-3 rounded-lg">
+    <span className="text-white bg-[#0F5959] text-sm py-1 px-3 rounded-lg">
       {children}
     </span>
   );

@@ -13,10 +13,19 @@ export function HeroSection() {
   }
 
   return (
-    <section className="default-px w-full lg:h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-end">
+    <section className="default-px w-full lg:h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-end relative">
+      <div className="absolute top-0 left-0 -z-10 h-full w-full">
+        <video
+          muted
+          loop
+          autoPlay
+          className="w-full h-full object-cover">
+          <source src="/video/codes-bg.mp4" type="video/mp4"/>
+        </video>
+      </div>
       <div className="flex items-start justify-between flex-col-reverse lg:flex-row">
         <div className="w-full lg:max-w-[530px]">
-          <p className="font-mono text-emerald-400">
+          <p className="font-mono text-[#107361] font-medium">
             Olá, meu nome é
           </p>
           <h2 className="text-4xl font-medium font-jetbrains mt-2">

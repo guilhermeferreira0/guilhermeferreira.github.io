@@ -3,12 +3,11 @@ import { NavLink } from "./nav-link";
 import { links } from "@/lib/mock";
 
 export function Header() {
-
-  return (
+   return (
     <header className="default-px absolute top-0 w-full z-10 h-24 flex items-center justify-center">
       <div className="w-full flex justify-between">
         <Link href='/' className="font-saira tracking-widest text-xl uppercase">
-          Ferreira_Codes
+          Ferreira_<strong className="font-medium">Codes</strong>
           <span>_</span>
         </Link>
         <nav>
