@@ -3,10 +3,16 @@ import Image from "next/image";
 import { TechBadge } from "./tech-badge";
 import { Button } from "./button";
 import { FaArrowRight } from "react-icons/fa";
-import { contacts } from "@/lib/mock";
 import Link from "next/link";
+import { RichText, RichTextProps } from "@graphcms/rich-text-react-renderer";
+import { CMSIcon } from "./cms-icon";
+import { ContentPageProps } from "@/types/data-types";
 
-export function HeroSection() {
+interface HeroSectionProps {
+  content: ContentPageProps
+}
+
+export function HeroSection({ content }: HeroSectionProps) {
   const handleContact = () => {
     const contactSession = document.querySelector('#contact');
     contactSession?.scrollIntoView({ behavior: 'smooth' });
@@ -31,13 +37,15 @@ export function HeroSection() {
           <h2 className="text-4xl font-medium font-jetbrains mt-2">
             Guilherme Ferreira
           </h2>
-          <p className="text-gray-400 my-6 text-sm sm:text-base">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur itaque velit deserunt aperiam autem. Dicta nesciunt aspernatur corrupti quam unde? Illum repellat culpa quis quasi, nam itaque adipisci magni.
-          </p>
+          <div className="text-gray-400 my-6 text-sm sm:text-base text-justify">
+            <RichText
+              content={content.introduction.raw}
+            />
+          </div>
 
           <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
-            {Array.from({length: 7}).map((_, index) => (
-              <TechBadge key={index}>NextJs</TechBadge>
+            {content.technologies.map((tech, index) => (
+              <TechBadge key={index}>{tech.name}</TechBadge>
             ))}
           </div>
 
@@ -48,13 +56,13 @@ export function HeroSection() {
             </Button>
 
             <div className="text-gray-600 text-2xl flex items-center h-20 gap-3">
-              {contacts.map(contact => (
+              {content.socials.map((contact, index) => (
                 <Link
-                  key={contact.id}
-                  href={contact.href}
+                  key={index}
+                  href={contact.url}
                   className="hover:text-gray-100 transition-colors"
                 >
-                  {contact.icon}
+                  <CMSIcon icon={contact.iconSvg}/>
                 </Link>
               ))}
             </div>

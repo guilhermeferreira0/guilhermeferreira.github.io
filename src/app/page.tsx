@@ -1,15 +1,20 @@
 import { HeroSection } from "@/components/hero-section";
 import { Knowledges } from "@/components/knowledges";
+import { KnownTechProps } from "@/components/known-tech";
 import { ProjectsFeatured } from "@/components/projects-featured";
 import { WorkExperience } from "@/components/work-experience";
+import { getData } from "@/lib/data";
 
-export default function Home() {
+export default async function Home() {
+  const { pages } = await getData();
+  const infos = pages[0];
+
   return (
-   <div className="w-full">
-    <HeroSection />
-    <Knowledges />
-    <ProjectsFeatured />
-    <WorkExperience />
-   </div>
+    <div className="w-full">
+      <HeroSection content={infos} />
+      <Knowledges techs={infos.knownTechs} />
+      <ProjectsFeatured />
+      <WorkExperience />
+    </div>
   );
 }

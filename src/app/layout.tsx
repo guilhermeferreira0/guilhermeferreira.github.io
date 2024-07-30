@@ -45,7 +45,7 @@ export default function RootLayout({
         {children}
         <ContactForm />
         <BackTop />
-        </body>
+      </body>
     </html>
   );
 }
