@@ -8,6 +8,7 @@ import { Slideshow } from "./slideshow";
 import { fetchQuery, getProjectDetail } from "@/lib/data";
 import { RichText } from "@/components/rich-text";
 import { StaticDataProps } from "@/types/data-types";
+import { Metadata } from "next";
 
 interface SlugProps {
   params: {
@@ -88,4 +89,25 @@ export async function generateStaticParams() {
   const { projects } = await fetchQuery<StaticDataProps>(query);
 
   return projects;
+}
+
+export async function generateMetadata({
+  params: { slug }
+}: SlugProps): Promise<Metadata> {
+  const data = await getProjectDetail(slug);
+  const project = data.project;
+
+  return {
+    title: project.title,
+    description: project.description.text,
+    openGraph: {
+      images: [
+        {
+          url: project.thumbnail.url,
+          width: 1200,
+          height: 630,
+        }
+      ]
+    },
+  }
 }

@@ -2,6 +2,12 @@ import { SectionTitle } from "@/components/section-title";
 import Link from "next/link";
 import { ProjectsList } from "./projects-list";
 import { getDataProjects } from "@/lib/data";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Projetos',
+  description: 'My projects page'
+}
 
 export default async function Projects() {
   const { projects } = await getDataProjects();

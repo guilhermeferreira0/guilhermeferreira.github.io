@@ -27,8 +27,16 @@ const saira = Saira({
 });
 
 export const metadata: Metadata = {
-  title: "FerreiraCodes",
-  description: "Welcome to my portofolio page",
+  title: {
+    default: 'FerreiraCodes',
+    template: '%s | FCodes'
+  },
+  description: "Welcome to my portfolio page",
+  icons: [
+    {
+      url: '/favicon.svg'
+    }
+  ]
 };
 
 export default function RootLayout({
