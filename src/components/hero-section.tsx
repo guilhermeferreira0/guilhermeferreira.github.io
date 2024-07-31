@@ -85,6 +85,7 @@ export function HeroSection({ content }: HeroSectionProps) {
             <div className="text-gray-600 text-2xl flex items-center h-20 gap-3">
               {content.socials.map((contact, index) => (
                 <Link
+                  target="_blank"
                   key={index}
                   href={contact.url}
                   className="hover:text-gray-100 transition-colors"

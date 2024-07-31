@@ -14,7 +14,9 @@ export function WorkExperience({ work }: WorkExperienceProps) {
       <div className="max-w-[420px]">
         <SectionTitle subtitle="experiências">Experiência Profissional</SectionTitle>
 
-        <p className="text-gray-400 mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam exercitationem temporibus nobis quas, dolorem vel maxime perferendis iure hic eaque, officia nemo veritatis, illum sint fugit natus laudantium cum! Quae!</p>
+        <p className="text-gray-400 mt-6">
+          Aqui estão algumas das minhas experiências profissionais. Embora sejam poucas, estou evoluindo cada vez mais e construindo uma base sólida para encarar, desafios e projetos ainda maiores.
+        </p>
       </div>
 
       <div className="flex flex-col gap-4">
