@@ -12,26 +12,46 @@ export interface SocialsProps {
   iconSvg: string
 }
 
+export interface ProjectSection {
+  title: string
+  image: {
+    url: string
+  }
+}
+
 export interface DataPageProps {
   pages: [
-    {
-      introduction: {
-        raw: RichTextProps
-      }
-      technologies: knownTechProps[]
-      profilePicture: string,
-      socials: SocialsProps[],
-      knownTechs: KnownTechProps[]
-    }
+    ContentPageProps
   ]
 }
 
 export interface ContentPageProps {
-    introduction: {
-      raw: RichTextProps
-    }
-    technologies: knownTechProps[]
-    profilePicture: string,
-    socials: SocialsProps[],
-    knownTechs: KnownTechProps[]
+  introduction: {
+    raw: RichTextProps
+  }
+  technologies: knownTechProps[]
+  profilePicture: string,
+  socials: SocialsProps[],
+  knownTechs: KnownTechProps[]
+  featuredProjects: FeaturedProjectsProps[]
 }
+
+export interface FeaturedProjectsProps {
+  slug: string
+  title: string
+  thumbnail: {
+    url: string
+  }
+  shortDescription: string
+  technology: KnownTechProps[]
+  pageThumbnail: {
+    url: string
+  }
+  sections: ProjectSection[]
+  description: {
+    raw: RichTextProps
+  }
+  liveProjectUrl?: string
+  githubUrl?:string
+}
+

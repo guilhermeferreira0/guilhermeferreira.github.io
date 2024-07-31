@@ -4,7 +4,7 @@ import { TechBadge } from "./tech-badge";
 import { Button } from "./button";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
-import { RichText, RichTextProps } from "@graphcms/rich-text-react-renderer";
+import { RichText } from "@graphcms/rich-text-react-renderer";
 import { CMSIcon } from "./cms-icon";
 import { ContentPageProps } from "@/types/data-types";
 

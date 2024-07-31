@@ -45,6 +45,17 @@ export async function getData(): Promise<DataPageProps> {
           iconSvg
           name
         }
+        featuredProjects {
+          slug
+          title
+          thumbnail {
+            url
+          }
+          shortDescription
+          technology {
+            name
+          }
+        }
       }
     }
   `;

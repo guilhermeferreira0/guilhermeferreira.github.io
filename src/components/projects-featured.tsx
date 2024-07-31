@@ -3,21 +3,25 @@ import { HorizontalDivider } from "./horizontal-divider";
 import { ProjectCard } from "./project-card";
 import { SectionTitle } from "./section-title";
 import { FaArrowRight } from "react-icons/fa";
+import { FeaturedProjectsProps } from "@/types/data-types";
 
-export function ProjectsFeatured() {
+interface ProjectsFeaturedProps {
+  projects: FeaturedProjectsProps[]
+}
+
+export function ProjectsFeatured({ projects }: ProjectsFeaturedProps) {
   return (
     <section className="default-px pt-16">
       <SectionTitle subtitle="destaques">Projetos em Destaque</SectionTitle>
       <HorizontalDivider className="mb-16"/>
 
       <div className="">
-        <ProjectCard
-          image="/images/profile-image.jpg"
-          title="Capputeeno"
-          description="lorem ipsum  dolor sit amet consectetor adipiscinds elite. Illo veniam temporibus actuhsad"
-          href="/"
-          techs={[ { icon: '', description: '', name: '' } ]}
-        />
+        {projects?.map((project, index) => (
+          <ProjectCard
+            key={index}
+            project={project}
+          />
+        ))}
         <HorizontalDivider className="my-10"/>
 
         <p className="flex items-center gap-1.5">

@@ -1,6 +1,5 @@
 import { HeroSection } from "@/components/hero-section";
 import { Knowledges } from "@/components/knowledges";
-import { KnownTechProps } from "@/components/known-tech";
 import { ProjectsFeatured } from "@/components/projects-featured";
 import { WorkExperience } from "@/components/work-experience";
 import { getData } from "@/lib/data";
@@ -13,7 +12,7 @@ export default async function Home() {
     <div className="w-full">
       <HeroSection content={infos} />
       <Knowledges techs={infos.knownTechs} />
-      <ProjectsFeatured />
+      <ProjectsFeatured projects={infos.featuredProjects}/>
       <WorkExperience />
     </div>
   );
