@@ -2,7 +2,7 @@ import Image from "next/image";
 import { TechBadge } from "./tech-badge";
 import Link from "next/link";
 import { FaLink } from "react-icons/fa";
-import { FeaturedProjectsProps } from "@/types/data-types";
+import { FeaturedProjectsProps } from "@/types/category-types";
 
 interface ProjectCardProps {
   project: FeaturedProjectsProps
@@ -12,11 +12,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <div className="flex gap-6 lg:gap-12 flex-col lg:flex-row justify-between">
-      <div className="lg:w-48">
-        <Image
-          className="object-cover rounded-lg w-1/4 lg:w-full m-auto"
-          src={''}
-          width={320}
+      <div className="lg:w-2/5 w-full">
+        <img
+          className="object-cover rounded-lg w-2/4 lg:w-full m-auto"
+          src={project.thumbnail.url}
+          width={420}
           height={304}
           alt={project.title}
         />

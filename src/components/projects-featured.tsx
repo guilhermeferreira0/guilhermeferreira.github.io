@@ -3,7 +3,7 @@ import { HorizontalDivider } from "./horizontal-divider";
 import { ProjectCard } from "./project-card";
 import { SectionTitle } from "./section-title";
 import { FaArrowRight } from "react-icons/fa";
-import { FeaturedProjectsProps } from "@/types/data-types";
+import { FeaturedProjectsProps } from "@/types/category-types";
 
 interface ProjectsFeaturedProps {
   projects: FeaturedProjectsProps[]
