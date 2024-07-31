@@ -30,7 +30,7 @@ export function HeroSection({ content }: HeroSectionProps) {
           <source src="/video/codes-bg.mp4" type="video/mp4"/>
         </video>
       </div>
-      <div className="flex items-start justify-between flex-col-reverse lg:flex-row">
+      <div className="flex items-start justify-between flex-col-reverse lg:flex-row gap-3">
         <motion.div
           className="w-full lg:max-w-[530px]"
           initial={{ opacity: 0, x: -100 }}
@@ -84,7 +84,7 @@ export function HeroSection({ content }: HeroSectionProps) {
         </motion.div>
 
         <motion.div
-          className="m-auto"
+          className="flex items-end justify-end m-auto"
           initial={{ opacity: 0, y: 200, scale: 0.5 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
         >
