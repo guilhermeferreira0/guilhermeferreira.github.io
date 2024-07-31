@@ -2,10 +2,10 @@ import { HeroSection } from "@/components/hero-section";
 import { Knowledges } from "@/components/knowledges";
 import { ProjectsFeatured } from "@/components/projects-featured";
 import { WorkExperience } from "@/components/work-experience";
-import { getData } from "@/lib/data";
+import { getDataHome } from "@/lib/data";
 
 export default async function Home() {
-  const { pages } = await getData();
+  const { pages } = await getDataHome();
   const infos = pages[0];
 
   return (

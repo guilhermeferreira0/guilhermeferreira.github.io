@@ -1,8 +1,12 @@
 import { SectionTitle } from "@/components/section-title";
 import Link from "next/link";
 import { ProjectsList } from "./projects-list";
+import { getDataProjects } from "@/lib/data";
 
-export default function Projects() {
+export default async function Projects() {
+  const { projects } = await getDataProjects();
+  console.log(projects);
+
   return (
     <section>
       <section className="w-full h-[630px] bg-hero-image bg-cover bg-no-repeat bg-center flex flex-col items-center justify-center">
@@ -20,7 +24,7 @@ export default function Projects() {
             </Link>
         </div>
       </section>
-      <ProjectsList />
+      <ProjectsList projects={projects} />
     </section>
   );
 }
