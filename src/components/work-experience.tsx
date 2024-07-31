@@ -1,6 +1,8 @@
+'use client';
 import { WorkExperience as TypeWork } from "@/types/category-types";
 import { ExperienceItem } from "./experience-item";
 import { SectionTitle } from "./section-title";
+import { motion } from "framer-motion";
 
 interface WorkExperienceProps {
   work: TypeWork[]
@@ -17,10 +19,17 @@ export function WorkExperience({ work }: WorkExperienceProps) {
 
       <div className="flex flex-col gap-4">
         {work?.map((exp, index) => (
-          <ExperienceItem
+          <motion.div
             key={index}
-            experience={exp}
-          />
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{opacity: 1, y: 0}}
+            exit={{ opacity: 0, y: -100 }}
+            transition={{ duration: 0.8, delay: index * 0.3 }}
+          >
+            <ExperienceItem
+              experience={exp}
+            />
+          </motion.div>
         ))}
       </div>
     </section>

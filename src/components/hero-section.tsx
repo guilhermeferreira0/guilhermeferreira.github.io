@@ -7,6 +7,7 @@ import Link from "next/link";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import { CMSIcon } from "./cms-icon";
 import { ContentPageProps } from "@/types/data-types";
+import {motion} from 'framer-motion';
 
 interface HeroSectionProps {
   content: ContentPageProps
@@ -30,7 +31,13 @@ export function HeroSection({ content }: HeroSectionProps) {
         </video>
       </div>
       <div className="flex items-start justify-between flex-col-reverse lg:flex-row">
-        <div className="w-full lg:max-w-[530px]">
+        <motion.div
+          className="w-full lg:max-w-[530px]"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100}}
+          transition={{ duration: 0.5, delay: 0 }}
+        >
           <p className="font-mono text-[#107361] font-medium">
             Olá, meu nome é
           </p>
@@ -45,7 +52,14 @@ export function HeroSection({ content }: HeroSectionProps) {
 
           <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
             {content.technologies.map((tech, index) => (
-              <TechBadge key={index}>{tech.name}</TechBadge>
+              <TechBadge
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.2 }}
+                key={index}
+              >
+                {tech.name}</TechBadge>
             ))}
           </div>
 
@@ -67,16 +81,22 @@ export function HeroSection({ content }: HeroSectionProps) {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <Image
-          className="rounded-xl max-lg:mt-24 mb-6 shadow-2xl object-cover m-auto"
-          src='/images/profile-image.jpg'
-          width={300}
-          height={300}
-          alt="Image for Guilherme Ferreira"
-          priority
-        />
+        <motion.div
+          className="m-auto"
+          initial={{ opacity: 0, y: 200, scale: 0.5 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        >
+          <Image
+            className="rounded-xl max-lg:mt-24 mb-6 shadow-2xl object-cover"
+            src='/images/profile-image.jpg'
+            width={300}
+            height={300}
+            alt="Image for Guilherme Ferreira"
+            priority
+          />
+        </motion.div>
       </div>
     </section>
   );

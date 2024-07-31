@@ -1,5 +1,4 @@
 import { WorkExperience } from "@/types/category-types";
-// import Image from "next/image";
 import Link from "next/link";
 import { RichText } from "./rich-text";
 import { TechBadge } from "./tech-badge";

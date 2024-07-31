@@ -1,3 +1,5 @@
+'use client';
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { NavLink } from "./nav-link";
 
@@ -14,9 +16,14 @@ const links = [
 
 export function Header() {
    return (
-    <header className="default-px absolute top-0 w-full z-10 h-24 flex items-center justify-center">
+    <motion.header
+      initial={{ top: -100 }}
+      animate={{ top: 0 }}
+      transition={{ duration: 0.5 }}
+      className="default-px absolute top-0 w-full z-10 h-24 flex items-center justify-center"
+    >
       <div className="w-full flex justify-between">
-        <Link href='/' className="font-saira tracking-widest text-xl uppercase">
+        <Link href='/' className="font-saira tracking-widest text-lg md:text-xl uppercase">
           Ferreira_<strong className="font-medium">Codes</strong>
           <span>_</span>
         </Link>
@@ -31,6 +38,6 @@ export function Header() {
           </ul>
         </nav>
       </div>
-    </header>
+    </motion.header>
   );
 }
