@@ -1,9 +1,18 @@
 import Link from "next/link";
 import { NavLink } from "./nav-link";
-import { links } from "@/lib/mock";
+
+const links = [
+  {
+    title: 'Home',
+    href: '/'
+  },
+  {
+    title: 'Projects',
+    href: '/projects'
+  }
+]
 
 export function Header() {
-
    return (
     <header className="default-px absolute top-0 w-full z-10 h-24 flex items-center justify-center">
       <div className="w-full flex justify-between">
@@ -13,10 +22,9 @@ export function Header() {
         </Link>
         <nav>
           <ul className="flex items-center gap-4 sm:gap-10">
-            {links.map(link => (
+            {links.map((link, index) => (
               <NavLink
-                key={link.id}
-                id={link.id}
+                key={index}
                 href={link.href}
                 title={link.title} />
             ))}
