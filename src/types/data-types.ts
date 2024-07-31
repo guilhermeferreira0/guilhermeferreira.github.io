@@ -1,23 +1,6 @@
-import { KnownTechProps } from "@/components/known-tech"
 import { RichTextProps } from "@graphcms/rich-text-react-renderer"
+import { FeaturedProjectsProps, knownTechProps, SocialsProps, WorkExperience } from "./category-types"
 
-export interface knownTechProps {
-  iconSvg: string
-  name: string
-  descriptions: string
-}
-
-export interface SocialsProps {
-  url: string
-  iconSvg: string
-}
-
-export interface ProjectSection {
-  title: string
-  image: {
-    url: string
-  }
-}
 
 export interface DataPageProps {
   pages: [
@@ -30,28 +13,12 @@ export interface ContentPageProps {
     raw: RichTextProps
   }
   technologies: knownTechProps[]
-  profilePicture: string,
-  socials: SocialsProps[],
-  knownTechs: KnownTechProps[]
+  profilePicture: string
+  socials: SocialsProps[]
+  knownTechs: knownTechProps[]
   featuredProjects: FeaturedProjectsProps[]
+  workExperience: WorkExperience[]
 }
 
-export interface FeaturedProjectsProps {
-  slug: string
-  title: string
-  thumbnail: {
-    url: string
-  }
-  shortDescription: string
-  technology: KnownTechProps[]
-  pageThumbnail: {
-    url: string
-  }
-  sections: ProjectSection[]
-  description: {
-    raw: RichTextProps
-  }
-  liveProjectUrl?: string
-  githubUrl?:string
-}
+
 

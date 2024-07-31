@@ -1,7 +1,12 @@
+import { WorkExperience as TypeWork } from "@/types/category-types";
 import { ExperienceItem } from "./experience-item";
 import { SectionTitle } from "./section-title";
 
-export function WorkExperience() {
+interface WorkExperienceProps {
+  work: TypeWork[]
+}
+
+export function WorkExperience({ work }: WorkExperienceProps) {
   return (
     <section className="default-px flex py-16 flex-col md:flex-row lg:gap-16 md:gap-4 gap-10">
       <div className="max-w-[420px]">
@@ -11,7 +16,12 @@ export function WorkExperience() {
       </div>
 
       <div className="flex flex-col gap-4">
-        <ExperienceItem />
+        {work?.map((exp, index) => (
+          <ExperienceItem
+            key={index}
+            experience={exp}
+          />
+        ))}
       </div>
     </section>
   );

@@ -13,7 +13,7 @@ export default async function Home() {
       <HeroSection content={infos} />
       <Knowledges techs={infos.knownTechs} />
       <ProjectsFeatured projects={infos.featuredProjects}/>
-      <WorkExperience />
+      <WorkExperience work={infos.workExperience} />
     </div>
   );
 }

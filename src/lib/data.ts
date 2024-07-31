@@ -22,43 +22,57 @@ async function fetchQuery(query: string) {
 
 export async function getData(): Promise<DataPageProps> {
   const query = `
-      query MyQuery {
-      pages(where: {slug: "home"}) {
-        introduction {
+    query MyQuery {
+    pages(where: {slug: "home"}) {
+      introduction {
+        raw
+      }
+      technologies {
+        iconSvg
+        name
+        descriptions
+      }
+      profilePicture {
+        url
+      }
+      knownTechs {
+        iconSvg
+        name
+        descriptions
+      }
+      socials {
+        url
+        iconSvg
+        name
+      }
+      featuredProjects {
+        slug
+        title
+        thumbnail {
+          url
+        }
+        shortDescription
+        technology {
+          name
+        }
+      }
+      workExperience {
+        companyName
+        companyUrl
+        role
+        dates
+        description {
           raw
         }
-        technologies {
-          iconSvg
-          name
-          descriptions
-        }
-        profilePicture {
+        companyLogo {
           url
         }
-        knownTechs {
-          iconSvg
+        technology {
           name
-          descriptions
-        }
-        socials {
-          url
-          iconSvg
-          name
-        }
-        featuredProjects {
-          slug
-          title
-          thumbnail {
-            url
-          }
-          shortDescription
-          technology {
-            name
-          }
         }
       }
     }
-  `;
+  }`;
 
   return await fetchQuery(query);
 }

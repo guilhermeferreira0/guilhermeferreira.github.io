@@ -1,6 +1,6 @@
 import { KnownTech } from "./known-tech";
 import { SectionTitle } from "./section-title";
-import { knownTechProps } from "@/types/data-types";
+import { knownTechProps } from "@/types/category-types";
 
 interface KnowledgesProps {
   techs: knownTechProps[]
@@ -16,8 +16,8 @@ export function Knowledges({ techs }: KnowledgesProps) {
         {techs?.map((tech, index) => (
           <KnownTech
             key={index}
-            icon={tech.iconSvg}
-            description={tech.descriptions}
+            iconSvg={tech.iconSvg}
+            descriptions={tech.descriptions}
             name={tech.name}
           />
         ))}
