@@ -10,7 +10,7 @@ export function Knowledges({ techs }: KnowledgesProps) {
 
   return (
     <section className="default-px py-16">
-      <SectionTitle subtitle="Competências">Conhecimenos</SectionTitle>
+      <SectionTitle subtitle="Competências">Conhecimentos</SectionTitle>
 
       <div className="grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-3 mt-10">
         {techs?.map((tech, index) => (

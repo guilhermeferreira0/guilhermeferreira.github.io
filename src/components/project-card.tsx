@@ -12,16 +12,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <div className="flex gap-6 lg:gap-12 flex-col lg:flex-row justify-between">
-      <div className="lg:w-2/5 w-full">
+      <div className="lg:w-2/5 w-2/4  m-auto">
         <img
-          className="object-cover rounded-lg w-2/4 lg:w-full m-auto"
+          className="object-cover rounded-lg w-full"
           src={project.thumbnail.url}
           width={420}
           height={304}
           alt={project.title}
         />
       </div>
-      <div>
+      <div className="flex-1 lg:py-[18px]">
         <h3 className="font-medium text-lg text-gray-50">
           {project.title}
         </h3>
