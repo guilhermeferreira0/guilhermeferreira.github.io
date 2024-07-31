@@ -1,6 +1,6 @@
 'use server';
 import { DataPageProps } from "@/types/data-types";
-import { ProjectsPageData } from "@/types/projects-types";
+import { ProjectDetailProps, ProjectsPageData } from "@/types/projects-types";
 
 async function fetchQuery(query: string) {
   const response = await fetch(process.env.HYGRAPH_URL!, {
@@ -94,5 +94,35 @@ export async function getDataProjects(): Promise<ProjectsPageData> {
       }
     }
   `
+  return await fetchQuery(query);
+}
+
+export async function getProjectDetail(slug: string): Promise<ProjectDetailProps> {
+  const query = `
+    query ProjectDetailQuery {
+    project(where: {slug: "${slug}"}) {
+      slug
+      title
+      shortDescription
+      thumbnail {
+        url
+      }
+      technology {
+        name
+      }
+      description {
+        raw
+      }
+      githubUrl
+      liveProjectUrl
+      sections {
+        title
+        image {
+          url
+        }
+      }
+    }
+  }`
+
   return await fetchQuery(query);
 }

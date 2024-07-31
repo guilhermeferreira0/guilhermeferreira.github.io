@@ -1,4 +1,4 @@
-import { RichTextContent } from "@graphcms/rich-text-types"
+import { RichTextContent } from "@graphcms/rich-text-types";
 
 export interface knownTechProps {
   iconSvg: string

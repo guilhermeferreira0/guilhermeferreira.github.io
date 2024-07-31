@@ -1,4 +1,5 @@
-import { knownTechProps } from "./category-types"
+import { knownTechProps, ProjectSection } from "./category-types";
+import { RichTextContent } from "@graphcms/rich-text-types"
 
 export interface ProjectsPageData {
   projects: ProjectPageProps[]
@@ -12,4 +13,22 @@ export interface ProjectPageProps {
       url: string
     }
     technology: knownTechProps[]
+}
+
+export interface ProjectDetailProps {
+  project: {
+    slug: string
+    title: string
+    shortDescription: string
+    thumbnail: {
+      url: string
+    }
+    technology: [{name: string}]
+    description: {
+      raw: RichTextContent
+    }
+    githubUrl: string
+    liveProjectUrl: string
+    sections: ProjectSection[]
+  }
 }
