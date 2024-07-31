@@ -2,12 +2,12 @@ import { Button } from "@/components/button";
 import { SectionTitle } from "@/components/section-title";
 import { TechBadge } from "@/components/tech-badge";
 import Link from "next/link";
-import { FiGlobe } from "react-icons/fi";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import { TbBrandGithub } from "react-icons/tb";
 import { Slideshow } from "./slideshow";
-import { getProjectDetail } from "@/lib/data";
+import { fetchQuery, getProjectDetail } from "@/lib/data";
 import { RichText } from "@/components/rich-text";
+import { StaticDataProps } from "@/types/data-types";
 
 interface SlugProps {
   params: {
@@ -17,7 +17,6 @@ interface SlugProps {
 
 export default async function ProjectDetails({params: { slug }}: SlugProps) {
   const { project } = await getProjectDetail(slug);
-  console.log(project.thumbnail.url)
 
   return (
     <>
@@ -76,4 +75,17 @@ export default async function ProjectDetails({params: { slug }}: SlugProps) {
       <Slideshow sections={project.sections} />
     </>
   );
+}
+
+export async function generateStaticParams() {
+  const query = `
+    query ProjectDetailQuery {
+      projects(first: 100) {
+        slug
+      }
+    }`;
+
+  const { projects } = await fetchQuery<StaticDataProps>(query);
+
+  return projects;
 }

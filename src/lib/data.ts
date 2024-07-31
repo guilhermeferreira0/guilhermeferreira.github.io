@@ -2,7 +2,7 @@
 import { DataPageProps } from "@/types/data-types";
 import { ProjectDetailProps, ProjectsPageData } from "@/types/projects-types";
 
-async function fetchQuery(query: string) {
+export async function fetchQuery<T>(query: string): Promise<T> {
   const response = await fetch(process.env.HYGRAPH_URL!, {
     method: 'POST',
     headers: {

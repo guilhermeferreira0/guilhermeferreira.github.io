@@ -13,7 +13,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="flex gap-6 lg:gap-12 flex-col lg:flex-row justify-between">
       <div className="lg:w-2/5 w-2/4  m-auto">
-        <img
+        <Image
           className="object-cover rounded-lg w-full"
           src={project.thumbnail.url}
           width={420}

@@ -1,4 +1,5 @@
-import { RichTextProps } from "@graphcms/rich-text-react-renderer"
+import { RichTextProps } from "@graphcms/rich-text-react-renderer";
+import { RichTextContent } from "@graphcms/rich-text-types";
 import { FeaturedProjectsProps, knownTechProps, SocialsProps, WorkExperience } from "./category-types"
 
 
@@ -10,7 +11,7 @@ export interface DataPageProps {
 
 export interface ContentPageProps {
   introduction: {
-    raw: RichTextProps
+    raw: RichTextContent
   }
   technologies: knownTechProps[]
   profilePicture: string
@@ -20,5 +21,9 @@ export interface ContentPageProps {
   workExperience: WorkExperience[]
 }
 
-
+export interface StaticDataProps {
+  projects: {
+    slug: string
+  }[]
+}
 

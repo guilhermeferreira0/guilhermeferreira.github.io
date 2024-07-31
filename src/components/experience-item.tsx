@@ -3,6 +3,7 @@ import { WorkExperience } from "@/types/category-types";
 import Link from "next/link";
 import { RichText } from "./rich-text";
 import { TechBadge } from "./tech-badge";
+import Image from "next/image";
 
 interface ExperienceProps {
   experience: WorkExperience
@@ -13,7 +14,7 @@ export function ExperienceItem({ experience }: ExperienceProps) {
     <div className="grid grid-cols-[40px,1fr] gap-4 lg:gap-10">
       <div className="flex flex-col items-center gap-4">
         <div className="rounded-full border border-gray-500">
-          <img
+          <Image
             src={experience.companyLogo.url}
             width={40}
             height={40}

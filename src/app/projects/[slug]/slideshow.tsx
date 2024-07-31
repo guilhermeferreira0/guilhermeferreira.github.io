@@ -14,7 +14,7 @@ export function Slideshow({ sections }: SlideshowProps) {
           <h2 className="text-2xl md:text-3xl text-gray-300">
             {section.title}
           </h2>
-          <img
+          <Image
             src={section.image.url}
             width={1080}
             height={672}
