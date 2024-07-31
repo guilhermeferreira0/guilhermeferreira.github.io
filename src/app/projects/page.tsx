@@ -5,7 +5,6 @@ import { getDataProjects } from "@/lib/data";
 
 export default async function Projects() {
   const { projects } = await getDataProjects();
-  console.log(projects);
 
   return (
     <section>
