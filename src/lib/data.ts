@@ -112,6 +112,7 @@ export async function getProjectDetail(slug: string): Promise<ProjectDetailProps
       }
       description {
         raw
+        text
       }
       githubUrl
       liveProjectUrl

@@ -26,6 +26,7 @@ export interface ProjectDetailProps {
     technology: [{name: string}]
     description: {
       raw: RichTextContent
+      text: string
     }
     githubUrl: string
     liveProjectUrl: string
