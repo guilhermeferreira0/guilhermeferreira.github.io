@@ -1,4 +1,4 @@
-export async function contactAction(_, formData: FormData) {
+export async function contactAction(_: any, formData: FormData) {
   const email = String(formData.get('email'));
   const name = String(formData.get('name'));
   const message = String(formData.get('message'));
