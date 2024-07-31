@@ -7,8 +7,7 @@ import Link from "next/link";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import { CMSIcon } from "./cms-icon";
 import { ContentPageProps } from "@/types/data-types";
-import {motion} from 'framer-motion';
-
+import { motion } from 'framer-motion';
 interface HeroSectionProps {
   content: ContentPageProps
 }
@@ -17,6 +16,16 @@ export function HeroSection({ content }: HeroSectionProps) {
   const handleContact = () => {
     const contactSession = document.querySelector('#contact');
     contactSession?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  const downloadCurriculum = () => {
+    const fileName = '/curriculum.pdf';
+    const aTag = document.createElement('a');
+    aTag.href = fileName;
+    aTag.setAttribute('download', fileName);
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
   }
 
   return (
@@ -30,7 +39,7 @@ export function HeroSection({ content }: HeroSectionProps) {
           <source src="/video/codes-bg.mp4" type="video/mp4"/>
         </video>
       </div>
-      <div className="flex items-start justify-between flex-col-reverse lg:flex-row gap-3">
+      <div className="flex items-start justify-between flex-col-reverse lg:flex-row gap-3 p-2 max-lg:mt-20">
         <motion.div
           className="w-full lg:max-w-[530px]"
           initial={{ opacity: 0, x: -100 }}
@@ -63,9 +72,13 @@ export function HeroSection({ content }: HeroSectionProps) {
             ))}
           </div>
 
-          <div className="flex-col sm:items-center sm:gap-5 sm:flex-row mt-6 lg:mt-10">
+          <div className="flex flex-col md:flex-row sm:items-center sm:gap-5 sm:flex-row mt-6 lg:mt-10 gap-4">
             <Button className="shadow-button" onClick={handleContact}>
               Entre em Contato
+              <FaArrowRight size={15}/>
+            </Button>
+            <Button className="shadow-button" onClick={downloadCurriculum}>
+              Currículo
               <FaArrowRight size={15}/>
             </Button>
 
@@ -84,15 +97,15 @@ export function HeroSection({ content }: HeroSectionProps) {
         </motion.div>
 
         <motion.div
-          className="flex items-end justify-end m-auto"
+          className="lg:h-[80%] flex justify-center max-lg:w-full"
           initial={{ opacity: 0, y: 200, scale: 0.5 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
         >
           <Image
-            className="rounded-xl max-lg:mt-24 mb-6 shadow-2xl object-cover"
+            className="rounded-xl"
             src='/images/profile-image.jpg'
             width={300}
-            height={300}
+            height={320}
             alt="Image for Guilherme Ferreira"
             priority
           />
