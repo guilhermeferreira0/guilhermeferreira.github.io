@@ -41,7 +41,7 @@ export function Header() {
           </div>
           <ul
             className={`flex gap-4 sm:gap-10
-            max-sm:flex-col max-sm:fixed max-sm:top-0 max-sm:bg-[#0A3A40] max-sm:min-h-screen max-sm:w-2/4 max-sm:py-20 max-sm:px-5 ${isOpen ? 'max-sm:-right-0' : 'max-sm:-right-2/4'} transition-all`}
+            max-sm:flex-col max-sm:fixed max-sm:top-0 max-sm:backdrop-blur-xl max-sm:min-h-screen max-sm:w-2/4 max-sm:py-20 max-sm:px-5 ${isOpen ? 'max-sm:-right-0' : 'max-sm:-right-2/4'} transition-all`}
               onClick={() => setIsOpen(false)}
           >
             {links.map((link, index) => (
