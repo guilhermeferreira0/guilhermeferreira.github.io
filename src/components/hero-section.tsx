@@ -35,7 +35,8 @@ export function HeroSection({ content }: HeroSectionProps) {
           muted
           loop
           autoPlay
-          className="w-full h-full object-cover">
+          playsInline
+          className="w-full h-full object-cover flex-none pointer-events-none">
           <source src="/video/codes-bg.mp4" type="video/mp4"/>
         </video>
       </div>

@@ -25,3 +25,7 @@
   background-color: #107361;
   border-radius: 14px;
 }
+
+video::-webkit-media-controls {
+  display: none;
+}
