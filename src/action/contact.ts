@@ -1,3 +1,11 @@
+const clearInputs = () => {
+  const inputs = document.querySelectorAll('input');
+  const textarea = document.querySelector('textarea') as HTMLTextAreaElement;
+  inputs[0].value = '';
+  inputs[1].value = '';
+  textarea.value = '';
+}
+
 export async function contactAction(_: any, formData: FormData) {
   const email = String(formData.get('email'));
   const name = String(formData.get('name'));
@@ -23,10 +31,8 @@ export async function contactAction(_: any, formData: FormData) {
   };
 
   try {
-    const data = await fetch(`http://localhost:3000/api/send`, options);
-    formData.set('email', '');
-    formData.set('name', '');
-    formData.set('message', '');
+    const data = await fetch(`/api/send`, options);
+    clearInputs();
     return { status: data.status }
   } catch(e) {
   };
