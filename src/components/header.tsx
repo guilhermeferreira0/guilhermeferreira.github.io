@@ -34,7 +34,7 @@ export function Header() {
         </Link>
         <nav>
           <div
-            className="sm:opacity-0 sm:touch-none sm:cursor-default h-24 flex items-center cursor-pointer absolute top-0 right-10 z-30"
+            className={`sm:opacity-0 sm:touch-none sm:cursor-default h-24 flex items-center cursor-pointer absolute top-0 right-10 z-30 ${isOpen ? 'max-sm:fixed' : ''}`}
             onClick={() => setIsOpen(prev => !prev)}
           >
             {isOpen ? <MdOutlineClose size={20} /> : <CiMenuBurger size={20} /> }
@@ -42,7 +42,7 @@ export function Header() {
           <ul
             className={`flex gap-4 sm:gap-10
             max-sm:flex-col max-sm:fixed max-sm:top-0 max-sm:backdrop-blur-xl max-sm:min-h-screen max-sm:w-2/4 max-sm:py-20 max-sm:px-5 ${isOpen ? 'max-sm:-right-0' : 'max-sm:-right-2/4'} transition-all`}
-              onClick={() => setIsOpen(false)}
+            onClick={() => setIsOpen(false)}
           >
             {links.map((link, index) => (
               <NavLink
