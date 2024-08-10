@@ -73,7 +73,7 @@ export function HeroSection({ content }: HeroSectionProps) {
             ))}
           </div>
 
-          <div className="flex flex-col md:flex-row sm:items-center sm:gap-5 sm:flex-row mt-6 lg:mt-10 gap-4">
+          <div className="flex flex-col md:flex-row sm:items-center sm:gap-5 sm:flex-row mt-6 lg:mt-10 gap-4 flex-wrap">
             <Button className="shadow-button" onClick={handleContact}>
               Entre em Contato
               <FaArrowRight size={15}/>
@@ -101,10 +101,10 @@ export function HeroSection({ content }: HeroSectionProps) {
         <motion.div
           className="lg:h-[80%] flex justify-center max-lg:w-full"
           initial={{ opacity: 0, y: 200, scale: 0.5 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
         >
           <Image
-            className="rounded-xl"
+            className="rounded-xl object-cover object-center"
             src='/images/profile-image.jpg'
             width={300}
             height={320}
