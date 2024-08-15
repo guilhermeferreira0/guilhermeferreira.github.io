@@ -1,3 +1,4 @@
+import axios from 'axios';
 const clearInputs = () => {
   const inputs = document.querySelectorAll('input');
   const textarea = document.querySelector('textarea') as HTMLTextAreaElement;
@@ -22,18 +23,10 @@ export async function contactAction(_: any, formData: FormData) {
     message: message
   }
 
-  const options = {
-    method: 'POST',
-    headers: {
-    'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(update),
-  };
-
   try {
-    const data = await fetch(`/api/send`, options);
     clearInputs();
-    return { status: data.status }
+    const data = await axios.post('/api/send', update);
+    return {status: data.status}
   } catch(e) {
   };
 }
