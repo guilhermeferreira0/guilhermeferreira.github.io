@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, IBM_Plex_Mono, JetBrains_Mono, Saira } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
-import { ContactForm } from "@/components/contact-form";
+import { SectionForm } from "@/components/section-form";
 import { BackTop } from "@/components/back-top";
 
 const inter = Inter({
@@ -51,7 +51,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
-        <ContactForm />
+        <SectionForm />
         <BackTop />
       </body>
     </html>
