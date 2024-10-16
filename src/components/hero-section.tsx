@@ -8,6 +8,7 @@ import { RichText } from "@graphcms/rich-text-react-renderer";
 import { CMSIcon } from "./cms-icon";
 import { ContentPageProps } from "@/types/data-types";
 import { motion } from 'framer-motion';
+
 interface HeroSectionProps {
   content: ContentPageProps
 }
@@ -37,7 +38,7 @@ export function HeroSection({ content }: HeroSectionProps) {
           autoPlay
           playsInline
           className="w-full h-full object-cover flex-none pointer-events-none">
-          <source src="/video/codes-bg.mp4" type="video/mp4"/>
+          <source src="/video/codes-bg-compress.mp4" type="video/mp4" />
         </video>
       </div>
       <div className="flex items-start justify-between flex-col-reverse lg:flex-row gap-3 p-2 max-lg:mt-20">
@@ -102,12 +103,14 @@ export function HeroSection({ content }: HeroSectionProps) {
           className="lg:h-[80%] flex justify-center max-lg:w-full"
           initial={{ opacity: 0, y: 200, scale: 0.5 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
+          id="#app"
         >
           <Image
-            className="rounded-xl object-cover object-center"
-            src='/images/profile-image.jpg'
+            className="rounded-xl object-cover object-center preview lazy"
+            src='/images/profile-image-compress.jpg'
             width={300}
             height={320}
+            sizes="(min-width: 1024px) 20rem, 25rem"
             alt="Image for Guilherme Ferreira"
             priority
           />
