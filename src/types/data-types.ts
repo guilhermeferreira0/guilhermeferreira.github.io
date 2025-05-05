@@ -13,7 +13,9 @@ export interface ContentPageProps {
     raw: RichTextContent
   }
   technologies: knownTechProps[]
-  profilePicture: string
+  profilePicture: {
+    url: string;
+  };
   socials: SocialsProps[]
   knownTechs: knownTechProps[]
   featuredProjects: FeaturedProjectsProps[]

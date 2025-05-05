@@ -14,6 +14,7 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ content }: HeroSectionProps) {
+
   const handleContact = () => {
     const contactSession = document.querySelector('#contact');
     contactSession?.scrollIntoView({ behavior: 'smooth' });
@@ -105,15 +106,16 @@ export function HeroSection({ content }: HeroSectionProps) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           id="#app"
         >
-          <Image
-            className="rounded-xl object-cover object-center preview lazy"
-            src='/images/profile-image-compress.jpg'
-            width={300}
-            height={320}
-            sizes="(min-width: 1024px) 20rem, 25rem"
-            alt="Image for Guilherme Ferreira"
-            priority
-          />
+          <div className="relative w-[300px] h-[350px]">
+            <Image
+              className="rounded-xl object-cover object-center"
+              src={content.profilePicture.url}
+              alt="Image for Guilherme Ferreira"
+              fill
+              sizes="(min-width: 1024px) 20rem, 25rem"
+              priority
+            />
+          </div>
         </motion.div>
       </div>
     </section>

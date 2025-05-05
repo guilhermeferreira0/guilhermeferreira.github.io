@@ -6,7 +6,6 @@ import { MessageForm } from "./message-form";
 
 function ButtonForm() {
   const { pending } = useFormStatus();
-  console.log(pending);
 
     return (
       <button

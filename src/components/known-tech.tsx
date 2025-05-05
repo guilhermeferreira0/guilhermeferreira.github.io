@@ -6,9 +6,9 @@ export function KnownTech({ iconSvg, name, descriptions }: knownTechProps) {
     <div className="p-6 rounded-lg bg-gray-600/20 text-gray-500 flex flex-col hover:text-emerald-500 hover:bg-gray-600/30 transition-all gap-2 h-full">
       <div className="flex items-center justify-between">
         <p className="font-medium">{name}</p>
-        <CMSIcon
-          icon={iconSvg}
-        />
+          <CMSIcon
+            icon={iconSvg}
+          />
       </div>
       <p>{descriptions}</p>
     </div>
